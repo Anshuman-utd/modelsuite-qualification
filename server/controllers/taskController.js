@@ -41,9 +41,17 @@ const createTask = async (req, res) => {
   const { title, description, status, assignedTo, dueDate } = req.body;
 
   try {
+    if (!title || !title.trim()) {
+      return res.status(400).json({ message: 'Title is required and cannot be empty' });
+    }
+
+    if (!description || !description.trim()) {
+      return res.status(400).json({ message: 'Description is required and cannot be empty' });
+    }
+
     const task = await Task.create({
-      title,
-      description,
+      title: title.trim(),
+      description: description.trim(),
       status,
       assignedTo: assignedTo || null,
       dueDate,
