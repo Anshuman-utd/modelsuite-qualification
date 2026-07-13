@@ -43,8 +43,8 @@ const SubmissionReviewModal = ({ submission, onClose, onReviewed }) => {
             <p className="text-[11px] font-semibold uppercase tracking-[0.5px] text-text-faint mb-1.5">Task</p>
             <p className="text-[15px] font-semibold text-text-primary">{task.title || '—'}</p>
             <div className="flex items-center gap-3 mt-2">
-              {task.dueDate && (
-                <span className="text-[12px] text-text-faint">Due: {task.dueDate}</span>
+              {fmtDate(task.dueDate) && (
+                <span className="text-[12px] text-text-faint">Due: {fmtDate(task.dueDate)}</span>
               )}
               
               {task.status && (

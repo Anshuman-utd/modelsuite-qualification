@@ -130,7 +130,7 @@ const SubmissionsPage = () => {
 
                       {/* Submitted at — raw ISO */}
                       <td className={`${tdCls} text-text-muted text-[13px] whitespace-nowrap`}>
-                        {sub.createdAt}
+                        {fmtDate(sub.createdAt)}
                       </td>
 
                       {/* Review status */}

@@ -39,8 +39,8 @@ const SubmitTaskModal = ({ task, onClose, onSubmitted }) => {
         {/* Task info strip */}
         <div className="px-6 py-3.5 bg-bg-surface border-b border-border">
           <p className="text-[14px] font-semibold text-text-primary">{task.title || 'Untitled Task'}</p>
-          {task.dueDate && (
-            <p className="text-[12px] text-text-faint mt-0.5">Due: {task.dueDate}</p>
+          {fmtDate(task.dueDate) && (
+            <p className="text-[12px] text-text-faint mt-0.5">Due: {fmtDate(task.dueDate)}</p>
           )}
         </div>
 

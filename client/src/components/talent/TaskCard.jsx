@@ -41,7 +41,7 @@ const TaskCard = ({ task, showClaimButton = false, onClaimed }) => {
       <div className="flex items-center justify-between flex-wrap gap-2 mt-auto">
         
         <span className="text-[12px] text-text-faint">
-          {task.dueDate ? `Due: ${task.dueDate}` : 'No due date'}
+          {fmtDate(task.dueDate) ? `Due: ${fmtDate(task.dueDate)}` : 'No due date'}
         </span>
         {task.createdBy?.name && (
           <span className="text-[12px] text-text-faint">By {task.createdBy.name}</span>
