@@ -1,4 +1,5 @@
 ﻿import { claimTask } from '../../api/talent';
+import { fmtDate } from '../admin/TasksTable';
 
 const STATUS_CLASS = {
   Open:      'status-badge-Open',

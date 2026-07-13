@@ -1,4 +1,5 @@
 ﻿import { reviewSubmission } from '../../api/submissions';
+import { fmtDate } from './TasksTable';
 
 const REVIEW_STATUS_CLASS = {
   Pending:  'status-badge-Submitted',
@@ -6,16 +7,18 @@ const REVIEW_STATUS_CLASS = {
   Rejected: 'status-badge-Rejected',
 };
 
-const SubmissionReviewModal = ({ submission, onClose, onReviewed }) => {
+const SubmissionReviewModal = ({ submission, onClose }) => {
 
   const handleReview = async (status) => {
-    try {
-      await reviewSubmission(submission._id, status);
-      onReviewed();
-      onClose();
-    } catch (err) {
-      alert(err.response?.data?.message || 'Review action failed');
+    if (status === 'Rejected') {
+      const confirmed = window.confirm(
+        'Are you sure you want to reject this submission?'
+      );
+
+      if (!confirmed) return;
     }
+
+    await reviewSubmission(submission._id, status);
   };
 
   const task   = submission.taskId   || {};
