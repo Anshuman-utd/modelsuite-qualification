@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Sidebar from '../../components/admin/Sidebar';
 import SubmissionReviewModal from '../../components/admin/SubmissionReviewModal';
 import { fetchAllSubmissions } from '../../api/submissions';
-import {fmtDate} from '../../components/admin/TasksTable';
+import { fmtDate } from '../../utils/date';
 
 const REVIEW_STATUS_CLASS = {
   Pending:  'status-badge-Submitted',

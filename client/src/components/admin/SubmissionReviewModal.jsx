@@ -1,5 +1,5 @@
 ﻿import { reviewSubmission } from '../../api/submissions';
-import { fmtDate } from './TasksTable';
+import { fmtDate } from '../../utils/date';
 
 const REVIEW_STATUS_CLASS = {
   Pending:  'status-badge-Submitted',
